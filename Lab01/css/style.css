@@ -1,0 +1,38 @@
+.inputArray {
+    width: min-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inputContainer {
+    height: min-content;
+    width: 4em;
+    display: flex;
+}
+
+.inputContainer>p {
+    display: block;
+    color: red;
+    font-weight: bold;
+    margin: auto;
+    font-size: small;
+}
+
+.inputContainer>p:hover {
+    cursor: pointer;
+    color: brown;
+}
+
+.inputContainer>input[type=number] {
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.results{
+    display: flex;
+}
+
+.results>tbody>tr>td {
+    width: 5em;
+}
