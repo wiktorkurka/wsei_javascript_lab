@@ -1,1 +1,1 @@
-# wsei_javascript_lab
+# WSEI - Programowanie w JavaScript NS/2022/Lab
