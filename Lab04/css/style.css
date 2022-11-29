@@ -3,21 +3,21 @@ html {
     height: 100%;
 }
 
-body {  
+body {
     display: grid;
     grid-template-columns: 0.3fr 2.4fr 0.3fr;
     grid-template-rows: 0.5fr 2.1fr 1fr 0.4fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-      ". . ."
-      ". note_container ."
-      ". note_creator ."
-      ". . .";
+        ". . ."
+        ". note_container ."
+        ". note_creator ."
+        ". . .";
     margin: 0;
     height: 100%;
 }
-  
+
 .flexbox {
     display: flex;
     width: 100%;
@@ -25,18 +25,76 @@ body {
 }
 
 /* Note container styles */
-#note_container { grid-area: note_container; }
-  
+#note_container {
+    grid-area: note_container;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#note_container>* {
+    flex: 1 1 auto;
+}
+
+/* Note styles */
+.note {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    height: fit-content;
+    margin: 5px;
+    padding: 5px;
+}
+
+.note-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.note-header>p[name=note-title] {
+    font-weight: bold;
+    width: 75%;
+    height: min-content;
+    margin: 5px 0;
+}
+
+.note-menu {
+    display: flex;
+    height: min-content;
+    justify-content: space-between;
+    margin: auto 5px;
+}
+
+.note-icon {
+    height: 1em;
+    margin: 5px;
+}
+
+.note-content {
+    width: 100%;
+}
+
+.note-footer {
+    width: 100%;
+}
+
+.note-footer>p[name=note-date] {
+    width: 100%;
+    margin: 5px 0;
+}
+
 /* Note creator input styles  */
 #note_creator {
     grid-area: note_creator;
     display: flex;
-    width: 250px;
+    width: 50%;
     flex-wrap: wrap;
+    justify-self: center;
 }
 
-#note_creator > textarea {
+#note_creator>textarea {
     width: 100%;
+    height: auto;
 }
 
 input[name='save_note'] {
@@ -48,16 +106,22 @@ input[name='save_note'] {
 .creator-input {
     display: flex;
     width: fit-content;
+    height: fit-content;
     flex-wrap: wrap;
 }
 
-.creator-input > label {
+.creator-input>label {
     width: 100%;
+    height: fit-content;
     font-size: 0.80em;
     font-weight: bold;
 }
 
-.creator-input > input {
+.creator-input>input {
     min-width: 50%;
     max-width: 100%;
+}
+
+.creator-input>input[type=text] {
+    height: fit-content;
 }

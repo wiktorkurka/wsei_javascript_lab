@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,25 +11,25 @@
 </head>
 
 <body class="container">
-        <div id="note_container">
+    <div id="note_container">
 
-        </div>
-        <!-- Note template, used for creating notes  -->
-        <div hidden id="note_template" class="note">
-            <div class="note-header">
-                <p class="note-title" name="note-title"></p>
-                <div class="note-menu">
-                    <img src="pin.png" alt="Pin this note">
-                    <img src="trash.png" alt="Delete this note">
-                </div>
-            </div>
-            <div class="note-body">
-                <p class="note-content" name="note-content"></p>
-            </div>
-            <div class="note-footer">
-                <p class="note-date" name="note-date"></p>
+    </div>
+    <!-- Note template, used for creating notes  -->
+    <div id="note_template" hidden>
+        <div class="note-header">
+            <p name="note-title"></p>
+            <div class="note-menu">
+                <img class="note-icon" src="assets/images/pin.png" name="pin_note" alt="Pin">
+                <img class="note-icon" src="assets/images/trash.png" name="delete_note" alt="Delete">
             </div>
         </div>
+        <div class="note-content">
+            <p name="note-content"></p>
+        </div>
+        <div class="note-footer">
+            <p name="note-date"></p>
+        </div>
+    </div>
     <div id="note_creator">
         <div class="creator-input">
             <label for="note_title">Note Title</label>
@@ -38,7 +38,7 @@
         <textarea name="note_content"></textarea>
         <div class="flexbox">
             <div class="creator-input">
-                <label for="note_color">Note color: </label>
+                <label for="note_color">Note color</label>
                 <input type="color" name="note_color">
             </div>
             <input type="button" name="save_note" value="Save Note">
