@@ -2,11 +2,12 @@ const asyncAdd = async (a, b) => {
   if (typeof a !== 'number' || typeof b !== 'number') {
     return Promise.reject('Argumenty muszą mieć typ number!')
   }
-  return new Promise((resolve, reject) => {
+  let promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(a + b)
     }, 100)
   })
+  return promise;
 }
 
 function addParams(...params) {
@@ -17,14 +18,14 @@ function addParams(...params) {
   );
 }
 
-function benchmark(sampleSize, iterations = 10) {
+async function benchmark(sampleSize, iterations = 10) {
   let tBenchmarkMs = 0;
 
   for (let i = 0; i < iterations; i++) {
     let sample = [...Array(sampleSize)].map(() => (Math.random() * 100));
-
     let tStart = performance.now();
-    addParams.apply(this, sample);
+
+    await addParams.apply(this, sample);
 
     let tTotalMs = performance.now() - tStart;
     console.log(`Execution took ${tTotalMs} ms`);
